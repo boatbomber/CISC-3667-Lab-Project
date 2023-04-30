@@ -1688,6 +1688,7 @@ GameObject:
   - component: {fileID: 2060544254}
   - component: {fileID: 2060544252}
   - component: {fileID: 2060544255}
+  - component: {fileID: 2060544256}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -1756,3 +1757,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 8496459966262828502, guid: a5f9e81ab3cfa6c4a8d8ac8f91fafb17, type: 3}
+--- !u!114 &2060544256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060544251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1301fab48dc42764793cd27f24c1bc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airplane: {fileID: 1619979950351047982, guid: 1695363821ae3f64cb6ac77eff553162, type: 3}

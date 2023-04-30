@@ -30,7 +30,8 @@ Lab project repo for CISC3667 Spring 23
   - Increase in size doesn’t make sense for my birds, so instead they fly higher over time
   - Hitting the bird while it is higher up rewards more points, incentivizing players to take risks and let the birds rise
 - At least one distractor
-  - TODO
+  - Airplanes that fly overhead, blocking your fireballs
+  - They also have a smoke spritesheet particle system for extra flair and visual distraction
 - At least three levels in increasing order of difficulty. Document the difficulty of each level in the directions.
   - TODO
 - Scene transitions: Every time that your player pops the balloon, the game should transition to the next level. Every time the balloon gets too big and disappears, the current level should be restarted.
