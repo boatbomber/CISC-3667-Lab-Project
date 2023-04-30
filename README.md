@@ -50,7 +50,7 @@ Lab project repo for CISC3667 Spring 23
 - A data item that persist from scene to scene
   - Score persists
 - A second data item that persists
-  - TODO
+  - Player username persists
 - High scores (at least 5, presented in order)
   - TODO
 - Animation #1
