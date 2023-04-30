@@ -11,7 +11,6 @@ public class Scorekeeper : MonoBehaviour
     public int level = 0;
     public int scoreThreshold;
     const int DEFAULT_POINTS = 1;
-    public string[] SCENES = { "Hills", "Desert", "Cave" };
 
     int GetThreshold(int lvl)
     {
@@ -69,17 +68,11 @@ public class Scorekeeper : MonoBehaviour
     public void DisplayScene()
     {
         TextMeshProUGUI sceneTxt = GameObject.Find("SceneText").GetComponent<TextMeshProUGUI>();
-        sceneTxt.SetText("Level:" + SCENES[level - 1]);
+        sceneTxt.SetText(SceneManager.GetActiveScene().name);
     }
 
     public void AdvanceScene()
     {
-        if (level >= SCENES.Length)
-        {
-            // SceneManager.LoadScene("Win");
-            return;
-        }
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
