@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdSpawn : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class BirdSpawn : MonoBehaviour
 
     void SpawnBird()
     {
+        if (SceneManager.GetActiveScene().name == "Menu")
+            return;
+
         Vector2 position = new Vector2(Random.Range(-3, 3), Random.Range(0.0f, 1.0f));
         Instantiate(bird, position, Quaternion.identity);
     }

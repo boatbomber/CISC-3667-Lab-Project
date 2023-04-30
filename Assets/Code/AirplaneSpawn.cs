@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AirplaneSpawn : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class AirplaneSpawn : MonoBehaviour
 
     void SpawnPlane()
     {
+        if (SceneManager.GetActiveScene().name == "Menu")
+            return;
+
         Vector2 position = new Vector2(Random.Range(0, 1) > 0.5 ? -6 : 6, Random.Range(1.5f, 2.5f));
         Instantiate(airplane, position, Quaternion.identity);
     }

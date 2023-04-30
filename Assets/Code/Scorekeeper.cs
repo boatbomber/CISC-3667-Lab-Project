@@ -14,12 +14,12 @@ public class Scorekeeper : MonoBehaviour
 
     int GetThreshold(int lvl)
     {
-        return (int)(Mathf.Pow(lvl, 2) * 3 + 5);
+        return (int)(Mathf.Pow(lvl + 1, 2) * 3 + 5);
     }
 
     void GetSceneInfo()
     {
-        level = SceneManager.GetActiveScene().buildIndex + 1;
+        level = SceneManager.GetActiveScene().buildIndex;
         scoreThreshold = GetThreshold(level);
         DisplayScene();
     }
@@ -61,18 +61,29 @@ public class Scorekeeper : MonoBehaviour
 
     public void DisplayScore()
     {
-        TextMeshProUGUI scoreTxt = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
-        scoreTxt.SetText("Score: " + score);
+        GameObject textObj = GameObject.Find("ScoreText");
+        if (textObj == null)
+            return;
+
+        textObj.GetComponent<TextMeshProUGUI>().SetText("Score: " + score);
     }
 
     public void DisplayScene()
     {
-        TextMeshProUGUI sceneTxt = GameObject.Find("SceneText").GetComponent<TextMeshProUGUI>();
-        sceneTxt.SetText(SceneManager.GetActiveScene().name);
+        GameObject textObj = GameObject.Find("SceneText");
+        if (textObj == null)
+            return;
+
+        textObj.GetComponent<TextMeshProUGUI>().SetText(SceneManager.GetActiveScene().name);
     }
 
     public void AdvanceScene()
     {
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
+        {
+            Debug.Log("No more scenes to advance to");
+            return;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
