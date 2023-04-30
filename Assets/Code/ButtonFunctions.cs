@@ -25,10 +25,7 @@ public class ButtonFunctions : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update() { }
 
     public void TogglePause()
     {
@@ -42,10 +39,10 @@ public class ButtonFunctions : MonoBehaviour
     {
         Time.timeScale = 0.0f;
 
-        foreach(GameObject g in pauseMode)
+        foreach (GameObject g in pauseMode)
             g.SetActive(true);
 
-        foreach(GameObject g in playMode)
+        foreach (GameObject g in playMode)
             g.SetActive(false);
     }
 
@@ -62,9 +59,13 @@ public class ButtonFunctions : MonoBehaviour
 
     public void PlayGame()
     {
-        Debug.Log("PlayGame()");
-       // string playerName = playerNameInput.text;
-       //  PersistentData.Instance.SetName(playerName);
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        if (controller != null)
+        {
+            controller.GetComponent<PersistentData>().SetScore(0);
+        }
+        // string playerName = playerNameInput.text;
+        //  PersistentData.Instance.SetName(playerName);
         SceneManager.LoadScene("Hills");
     }
 

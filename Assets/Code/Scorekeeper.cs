@@ -14,7 +14,7 @@ public class Scorekeeper : MonoBehaviour
 
     int GetThreshold(int lvl)
     {
-        return (int)(Mathf.Pow(lvl + 1, 2) * 3 + 5);
+        return (int)(Mathf.Pow(lvl - 1, 2) * 3 + 5);
     }
 
     void GetSceneInfo()
