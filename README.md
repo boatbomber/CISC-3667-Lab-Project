@@ -52,7 +52,7 @@ Lab project repo for CISC3667 Spring 23
 - A second data item that persists
   - Player username persists
 - High scores (at least 5, presented in order)
-  - TODO
+  - Scores are saved with PlayerPrefs and shown in the menu
 - Animation #1
   - Player has idle, walking, and jumping
 - Animation #2
