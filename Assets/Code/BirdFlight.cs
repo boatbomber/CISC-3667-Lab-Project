@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BirdFlight : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class BirdFlight : MonoBehaviour
     AudioSource deathSound;
 
     [SerializeField]
-    int speed = 2;
+    float speed = 2.0f;
 
     [SerializeField]
     float jumpForce = 95.0f;
@@ -43,7 +44,8 @@ public class BirdFlight : MonoBehaviour
     //do NOT use for physics & movement
     void Update()
     {
-        // No user input needed for flight
+        // No user input needed for flight, but we make the birds fly faster every level
+        speed = SceneManager.GetActiveScene().buildIndex * 0.75f;
     }
 
     private void Flap()
@@ -71,9 +73,7 @@ public class BirdFlight : MonoBehaviour
         GameObject controller = GameObject.FindGameObjectWithTag("GameController");
         if (controller != null)
         {
-            controller
-                .GetComponent<Scorekeeper>()
-                .AddPoints(heightPoints);
+            controller.GetComponent<Scorekeeper>().AddPoints(heightPoints);
         }
     }
 
