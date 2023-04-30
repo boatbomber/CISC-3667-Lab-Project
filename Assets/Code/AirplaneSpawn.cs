@@ -17,7 +17,10 @@ public class AirplaneSpawn : MonoBehaviour
 
     void SpawnPlane()
     {
-        if (SceneManager.GetActiveScene().name == "Menu")
+        if (
+            SceneManager.GetActiveScene().name == "Menu"
+            || SceneManager.GetActiveScene().name == "Help"
+        )
             return;
 
         Vector2 position = new Vector2(Random.Range(0, 1) > 0.5 ? -6 : 6, Random.Range(1.5f, 2.5f));
