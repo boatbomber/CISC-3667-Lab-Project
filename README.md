@@ -36,7 +36,7 @@ Lab project repo for CISC3667 Spring 23
   - The birds spawn more rapidly and fly faster every level up
 - Scene transitions: Every time that your player pops the balloon, the game should transition to the next level. Every time the balloon gets too big and disappears, the current level should be restarted.
   - Instead of transitions every single time they hit a bird, it transitions at thresholds that get exponentially larger each level
-  - When a bird escapes off the top of the screen, it sends you back to level 1
+  - When a bird escapes off the top of the screen, it sends you back to the menu
 - Directions (include the basics of each level)
   - From the menu, you can access the help screen
 - Settings, including a volume setting with a slider
