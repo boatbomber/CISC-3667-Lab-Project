@@ -42,9 +42,9 @@ Lab project repo for CISC3667 Spring 23
 - Settings, including a volume setting with a slider
   - TODO
 - Menu
-  - TODO
+  - Includes animated title, play button, help button, and high scores
 - Pause/resume and link back to menu
-  - TODO
+  - Pause/Resume is on bottom right, menu button is bottom left
 - Some other UI (dropdown, toggle, input)
   - TODO
 - A data item that persist from scene to scene
