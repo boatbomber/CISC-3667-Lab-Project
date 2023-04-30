@@ -9,12 +9,9 @@ public class ButtonFunctions : MonoBehaviour
     GameObject[] pauseMode;
     GameObject[] playMode;
 
-    // [SerializeField] InputField playerNameInput;
     // Start is called before the first frame update
     void Start()
     {
-        // playerNameInput.text = PersistentData.Instance.GetName();
-
         Time.timeScale = 1.0f;
 
         pauseMode = GameObject.FindGameObjectsWithTag("ShowInPauseMode");
@@ -64,8 +61,6 @@ public class ButtonFunctions : MonoBehaviour
         {
             controller.GetComponent<PersistentData>().SetScore(0);
         }
-        // string playerName = playerNameInput.text;
-        //  PersistentData.Instance.SetName(playerName);
         SceneManager.LoadScene("Hills");
     }
 

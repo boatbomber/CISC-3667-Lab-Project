@@ -40,6 +40,12 @@ public class Scorekeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (
+            SceneManager.GetActiveScene().name == "Menu"
+            || SceneManager.GetActiveScene().name == "Help"
+        )
+            return;
+
         GetScoreInfo();
         GetSceneInfo();
         if (score >= scoreThreshold)
@@ -89,8 +95,6 @@ public class Scorekeeper : MonoBehaviour
 
     public void ResetGame()
     {
-        Debug.Log("Resetting game");
-        PersistentData.Instance.SetScore(0);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 }
