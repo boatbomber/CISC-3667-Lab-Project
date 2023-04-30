@@ -38,7 +38,7 @@ Lab project repo for CISC3667 Spring 23
   - Instead of transitions every single time they hit a bird, it transitions at thresholds that get exponentially larger each level
   - When a bird escapes off the top of the screen, it sends you back to level 1
 - Directions (include the basics of each level)
-  - TODO
+  - From the menu, you can access the help screen
 - Settings, including a volume setting with a slider
   - TODO
 - Menu
