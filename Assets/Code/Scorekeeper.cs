@@ -63,13 +63,13 @@ public class Scorekeeper : MonoBehaviour
     public void DisplayScore()
     {
         TextMeshProUGUI scoreTxt = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
-        scoreTxt.SetText("Score: " + score + "/" + scoreThreshold);
+        scoreTxt.SetText("Score: " + score);
     }
 
     public void DisplayScene()
     {
         TextMeshProUGUI sceneTxt = GameObject.Find("SceneText").GetComponent<TextMeshProUGUI>();
-        sceneTxt.SetText("Level:" + level + " " + SCENES[level - 1]);
+        sceneTxt.SetText("Level:" + SCENES[level - 1]);
     }
 
     public void AdvanceScene()
