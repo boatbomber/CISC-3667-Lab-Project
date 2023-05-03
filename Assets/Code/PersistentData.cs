@@ -10,6 +10,9 @@ public class PersistentData : MonoBehaviour
     [SerializeField]
     string playerName;
 
+    [SerializeField]
+    int difficulty;
+
     public static PersistentData Instance;
 
     private void Awake()
@@ -28,6 +31,7 @@ public class PersistentData : MonoBehaviour
     {
         playerName = "";
         playerScore = 0;
+        difficulty = 0;
     }
 
     public void SetName(string name)
@@ -40,6 +44,11 @@ public class PersistentData : MonoBehaviour
         playerScore = score;
     }
 
+    public void SetDifficulty(int diff)
+    {
+        difficulty = diff;
+    }
+
     public string GetName()
     {
         return playerName;
@@ -50,6 +59,8 @@ public class PersistentData : MonoBehaviour
         return playerScore;
     }
 
-    // Update is called once per frame
-    void Update() { }
+    public int GetDifficulty()
+    {
+        return difficulty;
+    }
 }

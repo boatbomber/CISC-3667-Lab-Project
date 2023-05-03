@@ -14,7 +14,7 @@ public class Scorekeeper : MonoBehaviour
 
     int GetThreshold(int lvl)
     {
-        return (int)(Mathf.Pow(lvl - 1, 2) * 2 + 5);
+        return (int)(Mathf.Pow(lvl - 2, 2) * 2 + 5);
     }
 
     void GetSceneInfo()
@@ -43,6 +43,7 @@ public class Scorekeeper : MonoBehaviour
         if (
             SceneManager.GetActiveScene().name == "Menu"
             || SceneManager.GetActiveScene().name == "Help"
+            || SceneManager.GetActiveScene().name == "Settings"
         )
             return;
 

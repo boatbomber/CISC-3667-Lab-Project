@@ -40,13 +40,13 @@ Lab project repo for CISC3667 Spring 23
 - Directions (include the basics of each level)
   - From the menu, you can access the help screen
 - Settings, including a volume setting with a slider
-  - TODO
+  - Settings can be accessed from the menu
 - Menu
   - Includes animated title, play button, help button, and high scores
 - Pause/resume and link back to menu
   - Pause/Resume is on bottom right, menu button is bottom left
 - Some other UI (dropdown, toggle, input)
-  - TODO
+  - Dropdown for difficulty in Settings
 - A data item that persist from scene to scene
   - Score persists
 - A second data item that persists
@@ -61,4 +61,4 @@ Lab project repo for CISC3667 Spring 23
   - Fireball has animation and trail
   - Airplane has animated smoke particles
 - Extra credit: difficulty selection by player (with documentation about difficulty)
-  - TODO
+  - Player can alter difficulty in Settings, which adds a multiplier to bird speed

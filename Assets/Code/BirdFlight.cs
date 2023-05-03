@@ -46,6 +46,21 @@ public class BirdFlight : MonoBehaviour
     {
         // No user input needed for flight, but we make the birds fly faster every level
         speed = SceneManager.GetActiveScene().buildIndex * 0.75f;
+
+        // Add multipliers for difficulty med and hard
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        if (controller != null)
+        {
+            int difficulty = controller.GetComponent<PersistentData>().GetDifficulty();
+            if (difficulty == 1)
+            {
+                speed *= 1.5f;
+            }
+            else if (difficulty == 2)
+            {
+                speed *= 2.0f;
+            }
+        }
     }
 
     private void Flap()

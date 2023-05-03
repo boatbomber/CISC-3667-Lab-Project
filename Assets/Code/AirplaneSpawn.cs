@@ -20,6 +20,7 @@ public class AirplaneSpawn : MonoBehaviour
         if (
             SceneManager.GetActiveScene().name == "Menu"
             || SceneManager.GetActiveScene().name == "Help"
+            || SceneManager.GetActiveScene().name == "Settings"
         )
             return;
 
