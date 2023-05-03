@@ -16,12 +16,6 @@ public class BirdSpawn : MonoBehaviour
 
     void SpawnBird()
     {
-        if (
-            SceneManager.GetActiveScene().name == "Menu"
-            || SceneManager.GetActiveScene().name == "Help"
-        )
-            return;
-
         Vector2 position = new Vector2(Random.Range(-3, 3), Random.Range(0.0f, 1.0f));
         Instantiate(bird, position, Quaternion.identity);
     }
@@ -29,8 +23,13 @@ public class BirdSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (
+            SceneManager.GetActiveScene().name == "Menu"
+            || SceneManager.GetActiveScene().name == "Help"
+        )
+            return;
+
         spawnFreq = 0.5f + 3.0f / SceneManager.GetActiveScene().buildIndex;
-        Debug.Log(spawnFreq);
 
         timeSinceSpawn += Time.deltaTime;
         if (timeSinceSpawn > spawnFreq)
