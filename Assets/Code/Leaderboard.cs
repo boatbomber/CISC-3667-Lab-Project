@@ -35,7 +35,11 @@ public class Leaderboard : MonoBehaviour
 
         nameInput.text = playerName;
 
-        SaveScore();
+        if (playerScore != 0) // Don't bother saving 0
+        {
+            SaveScore();
+        }
+
         DisplayHighScores();
     }
 
