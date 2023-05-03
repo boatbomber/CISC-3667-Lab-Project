@@ -9,6 +9,7 @@ TagManager:
   - Attack
   - Wall
   - BirdEscape
+  - ShowInPauseMode
   layers:
   - Default
   - TransparentFX

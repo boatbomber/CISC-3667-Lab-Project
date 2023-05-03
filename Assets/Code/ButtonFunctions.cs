@@ -6,24 +6,6 @@ using UnityEngine.UI;
 
 public class ButtonFunctions : MonoBehaviour
 {
-    GameObject[] pauseMode;
-    GameObject[] playMode;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Time.timeScale = 1.0f;
-
-        pauseMode = GameObject.FindGameObjectsWithTag("ShowInPauseMode");
-        playMode = GameObject.FindGameObjectsWithTag("ShowInPlayMode");
-
-        foreach (GameObject g in pauseMode)
-            g.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update() { }
-
     public void TogglePause()
     {
         if (Time.timeScale == 0.0f)
@@ -36,22 +18,24 @@ public class ButtonFunctions : MonoBehaviour
     {
         Time.timeScale = 0.0f;
 
-        foreach (GameObject g in pauseMode)
-            g.SetActive(true);
-
-        foreach (GameObject g in playMode)
-            g.SetActive(false);
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        if (controller != null)
+        {
+            foreach (GameObject g in controller.GetComponent<UIHandler>().GetPauseObjects())
+                g.SetActive(true);
+        }
     }
 
     public void Resume()
     {
         Time.timeScale = 1.0f;
 
-        foreach (GameObject g in pauseMode)
-            g.SetActive(false);
-
-        foreach (GameObject g in playMode)
-            g.SetActive(true);
+        GameObject controller = GameObject.FindGameObjectWithTag("GameController");
+        if (controller != null)
+        {
+            foreach (GameObject g in controller.GetComponent<UIHandler>().GetPauseObjects())
+                g.SetActive(false);
+        }
     }
 
     public void PlayGame()
