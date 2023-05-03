@@ -87,7 +87,7 @@ public class Scorekeeper : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
         {
-            Debug.Log("No more scenes to advance to");
+            // No more scenes to advance to
             return;
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
