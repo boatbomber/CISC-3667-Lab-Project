@@ -24,9 +24,7 @@ public class BirdSpawn : MonoBehaviour
     void Update()
     {
         if (
-            SceneManager.GetActiveScene().name == "Menu"
-            || SceneManager.GetActiveScene().name == "Help"
-            || SceneManager.GetActiveScene().name == "Settings"
+            SceneManager.GetActiveScene().buildIndex < 4 // Don't spawn birds on menu, help, settings, or end screens
         )
             return;
 

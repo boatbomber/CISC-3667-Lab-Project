@@ -136,7 +136,7 @@ public class BirdFlight : MonoBehaviour
             GameObject controller = GameObject.FindGameObjectWithTag("GameController");
             if (controller != null)
             {
-                controller.GetComponent<Scorekeeper>().ResetGame();
+                controller.GetComponent<Scorekeeper>().EndGame();
             }
         }
     }

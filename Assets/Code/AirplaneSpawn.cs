@@ -18,9 +18,7 @@ public class AirplaneSpawn : MonoBehaviour
     void SpawnPlane()
     {
         if (
-            SceneManager.GetActiveScene().name == "Menu"
-            || SceneManager.GetActiveScene().name == "Help"
-            || SceneManager.GetActiveScene().name == "Settings"
+            SceneManager.GetActiveScene().buildIndex < 4 // Don't spawn planes on menu, help, settings, or end screens
         )
             return;
 

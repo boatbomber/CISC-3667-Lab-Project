@@ -14,7 +14,7 @@ public class Scorekeeper : MonoBehaviour
 
     int GetThreshold(int lvl)
     {
-        return (int)(Mathf.Pow(lvl - 2, 2) * 2 + 5);
+        return (int)(Mathf.Pow(lvl - 3, 2) * 2 + 5);
     }
 
     void GetSceneInfo()
@@ -49,10 +49,12 @@ public class Scorekeeper : MonoBehaviour
 
         GetScoreInfo();
         GetSceneInfo();
+
+        if (SceneManager.GetActiveScene().name == "End")
+            return;
+
         if (score >= scoreThreshold)
-        {
             AdvanceScene();
-        }
     }
 
     public void AddPoints()
@@ -94,8 +96,8 @@ public class Scorekeeper : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void ResetGame()
+    public void EndGame()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("End");
     }
 }
